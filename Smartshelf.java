@@ -181,7 +181,8 @@ public class Smartshelf {
                 filtered.add(it);
             }
         }
-        return new Smartshelf(filtered);
+        return new Smartshelf(filtered.toArray(new Item[0]));
+    
     }
 
     /**
@@ -211,9 +212,19 @@ public class Smartshelf {
      */
     @Override
     public String toString() {
-        // TO DO
-        return null;
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < this.items.size(); i++) {
+            sb.append(this.items.get(i).toString());
+            if (i < this.items.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
     }
+    
 
     /* class methods */
 
@@ -238,7 +249,21 @@ public class Smartshelf {
      *  reference in Smartshelfs
      */
     public static Smartshelf heaviestSmartshelf(Smartshelf[] Smartshelfs) {
-        // TO DO
-        return null;
+        Smartshelf best = null;
+        int bestWeight = Integer.MIN_VALUE;
+        for (Smartshelf s : Smartshelfs) {
+            if (s == null) {
+                continue;
+            }
+            int w = s.totalWeightInGrammes();
+            if (best == null || w > bestWeight) {
+                best = s;
+                bestWeight = w;
+            }
+        }
+        return best;
     }
+
+
+    
 }
