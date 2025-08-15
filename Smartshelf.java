@@ -80,7 +80,8 @@ public class Smartshelf {
      * Empties this Smartshelf to a Smartshelf that contains 0 Items.
      */
     public void empty() {
-        // TO DO
+        this.items.clear();
+        
     }
 
     /**
@@ -92,7 +93,8 @@ public class Smartshelf {
      *  Items that are kept
      */
     public void keepOnlyItemsWith(int maxItemWeightInGrammes) {
-        // TO DO
+        this.items.removeIf(it -> it.getWeightInGrammes() > maxItemWeightInGrammes);
+        
     }
 
     /* Accessors */
@@ -103,7 +105,8 @@ public class Smartshelf {
      * @return the number of non-null Items in this Smartshelf
      */
     public int numberOfItems() {
-        // TO DO
+
+     return this.items.size();   
         return 0;
     }
 
@@ -113,8 +116,12 @@ public class Smartshelf {
      * @return the total weight of the Items in this Smartshelf.
      */
     public int totalWeightInGrammes() {
-        // TO DO
-        return 0;
+
+         int sum = 0;
+        for (Item it : this.items) {
+            sum += it.getWeightInGrammes();
+        }
+        return sum;
     }
 
     /**
@@ -132,7 +139,12 @@ public class Smartshelf {
      *  or -1.0 if there is no such Item.
      */
     public double averageWeightInGrammes() {
-        // TO DO
+        int n = numberOfItems();
+        if (n == 0) {
+            return -1.0;
+        }
+        return totalWeightInGrammes() / (double) n;
+        
         return 0.0;
     }
 
