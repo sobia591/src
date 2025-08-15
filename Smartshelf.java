@@ -158,8 +158,10 @@ public class Smartshelf {
      *  null if this Smartshelf does not contain any Item objects
      */
     public Item greatestItem() {
-        // TO DO
+        if (this.items.isEmpty()) {
         return null;
+    }
+     return Collections.max(this.items);
     }
 
     /**
@@ -173,8 +175,13 @@ public class Smartshelf {
      *  whose weight is less than or equal to the specified method parameter
      */
     public Smartshelf makeNewSmartshelfWith(int maxItemWeightInGrammes) {
-        // TO DO
-        return null;
+         List<Item> filtered = new ArrayList<>();
+        for (Item it : this.items) {
+            if (it.getWeightInGrammes() <= maxItemWeightInGrammes) {
+                filtered.add(it);
+            }
+        }
+        return new Smartshelf(filtered);
     }
 
     /**
