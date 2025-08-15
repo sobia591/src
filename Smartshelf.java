@@ -64,7 +64,15 @@ public class Smartshelf {
      *  false otherwise
      */
     public boolean addAll(Item[] items) {
-        // TO DO
+        boolean addedAny = false;
+        for (Item it : items) {
+            if (it != null) {
+                this.items.add(it);
+                addedAny = true;
+            }
+        }
+        return addedAny;
+        
         return false;
     }
 
