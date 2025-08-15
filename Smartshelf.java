@@ -23,7 +23,7 @@ public class Smartshelf {
      * Constructs a new Smartshelf without any Items.
      */
     public Smartshelf() {
-        // TO DO
+        this.items = new ArrayList<>();
     }
 
     /**
@@ -36,7 +36,8 @@ public class Smartshelf {
      *  constructed Smartshelf
      */
     public Smartshelf(Item[] items) {
-        // TO DO
+        this(); //  field initialization to the no-arg constructor
+        addAll(items);
     }
 
     /* Modifiers */
@@ -49,10 +50,11 @@ public class Smartshelf {
      * @return true if e is not null, false otherwise
      */
     public boolean add(Item e) {
-        // TO DO
+        if (e == null) {
         return false;
     }
-
+    this.items.add(e);
+    return true;
     /**
      * Adds all non-null Items in items to this Smartshelf.
      *
