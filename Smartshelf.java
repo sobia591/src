@@ -51,10 +51,12 @@ public class Smartshelf {
      */
     public boolean add(Item e) {
         if (e == null) {
-        return false;
+            return false;
+        }
+        this.items.add(e);
+        return true;
     }
-    this.items.add(e);
-    return true;
+
     /**
      * Adds all non-null Items in items to this Smartshelf.
      *
@@ -72,8 +74,6 @@ public class Smartshelf {
             }
         }
         return addedAny;
-        
-        return false;
     }
 
     /**
