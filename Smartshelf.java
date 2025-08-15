@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * A Smartshelf holds zero or more Items and can provide information about the
  * Items. One can add Items to a Smartshelf during its lifetime, empty the
@@ -7,11 +11,11 @@
  * is created, and it may grow and shrink over the lifetime of a Smartshelf
  * object.)
  *
- * @author
+ * @author sobia
  */
 public class Smartshelf {
 
-    // TO DO
+    private List<Item> items;
 
     /* Constructors */
 
