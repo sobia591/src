@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class Smartshelf {
 
-    private List<Item> items;
+    private final List<Item> items;
 
     /* Constructors */
 
@@ -265,5 +265,5 @@ public class Smartshelf {
     }
 
 
-    
+    }
 }
